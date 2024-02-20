@@ -15,6 +15,22 @@ import static org.springframework.security.config.Customizer.withDefaults;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
+/*
+        Authentication it means who is the user
+        Authorization is the user allowed to perform bla bla bla
+
+        Authentication object represents the user
+            Principal: user information like full name, email, and given name
+            GrantedAuthorities: it's a role of a user "permissions" like a roles,etc
+            details: more information about http request, ip, and more
+            Credentials: "password", often null because many cases when we logged in using Google,
+                         we shouldn't the pass of user
+
+            method isAuthenticated always true! means if visit the url which secured it will return false
+
+
+        https://docs.spring.io/spring-security/reference/servlet/authentication/architecture.html#servlet-authentication-granted-authority
+ */
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
