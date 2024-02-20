@@ -12,7 +12,7 @@ public class WebController {
     }
     @GetMapping(value = "/private")
     public String privatePage(){
-        return "hello you need permission first!";
+        return "Hi welcome to our app!";
     }
 
 

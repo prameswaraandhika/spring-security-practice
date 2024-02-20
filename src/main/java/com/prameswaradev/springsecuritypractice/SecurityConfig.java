@@ -28,6 +28,7 @@ public class SecurityConfig {
 //                            authorizeConfig.anyRequest().permitAll();
                         })
                 .formLogin(withDefaults())
+                .oauth2Login(withDefaults())
                 .build();
     }
 
