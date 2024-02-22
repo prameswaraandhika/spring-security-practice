@@ -2,6 +2,7 @@ package com.prameswaradev.springsecuritypractice;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -32,6 +33,7 @@ public class SecurityConfig {
         https://docs.spring.io/spring-security/reference/servlet/authentication/architecture.html#servlet-authentication-granted-authority
  */
 
+    @Order(100)
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
@@ -48,6 +50,7 @@ public class SecurityConfig {
                 .build();
     }
 
+    @Order(200)
     @Bean
     public UserDetailsService userDetailsService(){
         return new InMemoryUserDetailsManager(
