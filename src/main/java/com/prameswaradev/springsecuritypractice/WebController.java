@@ -23,7 +23,8 @@ public class WebController {
 
     @GetMapping(value = "/")
     public String publicPage(){
-        return "hello Prameswara!";
+        var authentication = SecurityContextHolder.getContext().getAuthentication(); // best practice
+        return "Hi welcome to our app king " + getName(authentication);
     }
 
 //    to consume the data of user while log in
